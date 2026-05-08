@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Catálogo Anime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fondo">
+
+  <div class="busqueda-card">
+    <ion-item lines="none" class="input-buscador">
+      <ion-input placeholder="Buscar anime..." [(ngModel)]="busqueda">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="boton-principal" (click)="buscarAnime()">
+      Buscar
+    </ion-button>
+  </div>
+
+  <div class="loading-container" *ngIf="loading">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando animes...</p>
+  </div>
+
+  <ion-card class="anime-card" *ngFor="let anime of animes">
+
+    <div class="imagen-container">
+      <img class="anime-imagen" [src]="anime.images.jpg.image_url" [alt]="anime.title">
+    </div>
+
+    <ion-card-content>
+      <h2>{{ anime.title }}</h2>
+
+      <div class="datos">
+        <span>Episodios: {{ anime.episodes || 'No disponible' }}</span>
+        <span>Puntaje: {{ anime.score || 'Sin puntaje' }}</span>
+      </div>
+
+      <ion-button expand="block" fill="outline" class="boton-detalle" [routerLink]="['/detalle', anime.mal_id]">
+        Ver detalle
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

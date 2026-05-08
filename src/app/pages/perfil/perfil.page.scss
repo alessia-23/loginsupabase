@@ -1,0 +1,107 @@
+.fondo {
+    --background: #f8fafc;
+}
+
+.perfil-wrapper {
+    padding: 22px 16px;
+}
+
+.perfil-card {
+    border-radius: 28px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+    margin: 0;
+}
+
+.avatar {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: #eef2f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto 16px;
+}
+
+.avatar span {
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.correo {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.separador {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 22px 0;
+}
+
+.datos-perfil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.dato {
+    background: #f3f4f6;
+    border-radius: 20px;
+    padding: 14px 10px;
+    text-align: center;
+}
+
+.dato p {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.dato strong {
+    font-size: 15px;
+    color: #374151;
+}
+
+.boton-principal {
+    --background: #e5e7eb;
+    --color: #374151;
+    --border-radius: 20px;
+    height: 46px;
+    text-transform: none;
+    font-weight: 700;
+    margin-top: 22px;
+}
+
+.formulario {
+    margin-top: 4px;
+}
+
+.form-titulo {
+    text-align: center;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.input-perfil {
+    --background: #f3f4f6;
+    --border-radius: 18px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+}
+
+.boton-cancelar {
+    --color: #6b7280;
+    text-transform: none;
+    font-weight: 600;
+}

@@ -1,0 +1,72 @@
+.fondo {
+    --background: #ffffff;
+}
+
+.busqueda-card {
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.input-buscador {
+    --background: #f4f4f4;
+    --border-radius: 18px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+}
+
+.boton-principal,
+.boton-detalle {
+    --border-radius: 18px;
+    font-weight: 600;
+    text-transform: none;
+}
+
+.loading-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.anime-card {
+    border-radius: 24px;
+    margin: 18px 0;
+    padding-top: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+.imagen-container {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.anime-imagen {
+    width: 190px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+ion-card-content h2 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.datos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.datos span {
+    background: #f3f4f6;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+}

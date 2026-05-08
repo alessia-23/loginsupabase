@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+
+  <div class="perfil-wrapper">
+
+    <ion-card class="perfil-card">
+      <ion-card-content>
+
+        <div class="avatar">
+          <span>👤</span>
+        </div>
+
+        <h2>{{ nombre }} {{ apellido }}</h2>
+
+        <p class="correo">
+          {{ email || 'Correo no disponible' }}
+        </p>
+
+        <div class="separador"></div>
+
+        <div class="datos-perfil" *ngIf="!editando">
+
+          <div class="dato">
+            <p>Nombre</p>
+            <strong>{{ nombre || 'No registrado' }}</strong>
+          </div>
+
+          <div class="dato">
+            <p>Apellido</p>
+            <strong>{{ apellido || 'No registrado' }}</strong>
+          </div>
+
+          <div class="dato">
+            <p>País</p>
+            <strong>{{ pais || 'No registrado' }}</strong>
+          </div>
+
+          <div class="dato">
+            <p>Edad</p>
+            <strong>{{ edad || 'No registrada' }}</strong>
+          </div>
+
+        </div>
+
+        <ion-button expand="block" class="boton-principal" *ngIf="!editando" (click)="editarPerfil()">
+          Editar perfil
+        </ion-button>
+
+        <div *ngIf="editando" class="formulario">
+
+          <p class="form-titulo">Actualizar información</p>
+
+          <ion-item class="input-perfil" lines="none">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input [(ngModel)]="nombreTemporal"></ion-input>
+          </ion-item>
+
+          <ion-item class="input-perfil" lines="none">
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input [(ngModel)]="apellidoTemporal"></ion-input>
+          </ion-item>
+
+          <ion-item class="input-perfil" lines="none">
+            <ion-label position="floating">País</ion-label>
+            <ion-input [(ngModel)]="paisTemporal"></ion-input>
+          </ion-item>
+
+          <ion-item class="input-perfil" lines="none">
+            <ion-label position="floating">Edad</ion-label>
+            <ion-input type="number" [(ngModel)]="edadTemporal"></ion-input>
+          </ion-item>
+
+          <ion-button expand="block" class="boton-principal" (click)="guardarPerfil()">
+            Guardar cambios
+          </ion-button>
+
+          <ion-button expand="block" fill="clear" class="boton-cancelar" (click)="cancelarEdicion()">
+            Cancelar
+          </ion-button>
+
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>

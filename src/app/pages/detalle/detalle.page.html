@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Botón para regresar -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/catalogo"></ion-back-button>
+    </ion-buttons>
+
+    <!-- Título -->
+    <ion-title>
+      Detalle Anime
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fondo">
+
+  <!-- Loading -->
+  <div class="loading-container" *ngIf="loading">
+
+    <ion-spinner name="crescent"></ion-spinner>
+
+    <p>Cargando detalle...</p>
+
+  </div>
+
+  <!-- Contenido detalle -->
+  <div class="detalle-container" *ngIf="anime">
+
+    <!-- Imagen -->
+    <div class="imagen-container">
+
+      <img class="anime-imagen" [src]="anime.images.jpg.large_image_url || anime.images.jpg.image_url"
+        [alt]="anime.title">
+
+    </div>
+
+    <!-- Nombre anime -->
+    <h1>
+      {{ anime.title }}
+    </h1>
+
+    <!-- Datos rápidos -->
+    <div class="datos">
+
+      <span>
+        ⭐ {{ anime.score || 'Sin puntaje' }}
+      </span>
+
+      <span>
+        🎬 {{ anime.episodes || 'N/D' }} episodios
+      </span>
+
+      <span>
+        📺 {{ anime.status || 'No disponible' }}
+      </span>
+
+    </div>
+
+    <!-- Información -->
+    <ion-card class="info-card">
+
+      <ion-card-content>
+
+        <h2>
+          Información
+        </h2>
+
+        <p>
+          <strong>Año:</strong>
+          {{ anime.year || 'No disponible' }}
+        </p>
+
+        <p>
+          <strong>Tipo:</strong>
+          {{ anime.type || 'No disponible' }}
+        </p>
+
+        <p>
+          <strong>Duración:</strong>
+          {{ anime.duration || 'No disponible' }}
+        </p>
+
+      </ion-card-content>
+
+    </ion-card>
+
+    <!-- Sinopsis -->
+    <ion-card class="sinopsis-card">
+
+      <ion-card-content>
+
+        <h2>
+          Sinopsis
+        </h2>
+
+        <!-- Sinopsis traducida -->
+        <p>
+          {{ sinopsisTraducida }}
+        </p>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

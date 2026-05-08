@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import {
   IonHeader,
   IonToolbar,
@@ -13,9 +17,6 @@ import {
   IonCardContent
 } from '@ionic/angular/standalone';
 
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { SupabaseService } from '../../services/supabase.service';
 
 @Component({
@@ -39,7 +40,10 @@ import { SupabaseService } from '../../services/supabase.service';
     IonCardContent
   ]
 })
+
 export class LoginPage {
+
+  // Variables para guardar correo, contraseña y mensajes
   email = '';
   password = '';
   mensaje = '';
@@ -47,33 +51,99 @@ export class LoginPage {
   constructor(
     private supabaseService: SupabaseService,
     private router: Router
-  ) {}
+  ) { }
 
+  // Método para iniciar sesión
   async login() {
+
+    // Limpia mensajes anteriores
+    this.mensaje = '';
+
+    // Validar campos vacíos
+    if (!this.email.trim() || !this.password.trim()) {
+      this.mensaje = 'Todos los campos son obligatorios';
+      return;
+    }
+
+    // Validar formato del correo
+    if (!this.validarCorreo(this.email)) {
+      this.mensaje = 'Ingrese un correo válido';
+      return;
+    }
+
+    // Login con Supabase
     const { error } = await this.supabaseService.login(
-      this.email,
-      this.password
+      this.email.trim(),
+      this.password.trim()
     );
 
+    // Verifica errores
     if (error) {
-      this.mensaje = error.message;
+      this.mensaje = 'Correo o contraseña incorrectos';
       return;
     }
 
-    this.router.navigateByUrl('/home');
+    // Redirecciona al inicio
+    this.router.navigateByUrl('/tabs/inicio');
   }
 
+  // Método para registrar usuarios
   async register() {
-    const { error } = await this.supabaseService.register(
-      this.email,
-      this.password
+
+    // Limpia mensajes anteriores
+    this.mensaje = '';
+
+    // Validar campos vacíos
+    if (!this.email.trim() || !this.password.trim()) {
+      this.mensaje = 'Todos los campos son obligatorios';
+      return;
+    }
+
+    // Validar formato de correo
+    if (!this.validarCorreo(this.email)) {
+      this.mensaje = 'Ingrese un correo válido';
+      return;
+    }
+
+    // Expresión regular para contraseña segura
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,12}$/;
+
+    // Validar contraseña
+    if (!passwordRegex.test(this.password)) {
+      this.mensaje =
+        'La contraseña debe tener entre 6 y 12 caracteres, mayúsculas, minúsculas, números y caracteres especiales';
+      return;
+    }
+
+    // Registro en Supabase
+    const { data, error } = await this.supabaseService.register(
+      this.email.trim(),
+      this.password.trim()
     );
 
+    // Verificar errores
     if (error) {
       this.mensaje = error.message;
       return;
     }
 
-    this.mensaje = 'Usuario registrado';
+    // Verifica si el correo ya existe
+    if (data.user && data.user.identities?.length === 0) {
+      this.mensaje = 'Ya existe una cuenta con este correo';
+      return;
+    }
+
+    // Mensaje exitoso
+    this.mensaje = 'Usuario registrado correctamente';
   }
+
+  // Método para validar correo electrónico
+  validarCorreo(email: string): boolean {
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailRegex.test(email);
+  }
+
 }

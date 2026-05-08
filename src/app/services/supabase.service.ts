@@ -32,4 +32,8 @@ export class SupabaseService {
   logout() {
     return this.supabase.auth.signOut();
   }
+
+  getUser() {
+    return this.supabase.auth.getUser();
+  }
 }
