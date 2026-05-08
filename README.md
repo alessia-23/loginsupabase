@@ -170,31 +170,18 @@ export const environment = {
 
 | Pantalla | Vista |
 |---|---|
-| 🔐 Login | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/56d2c726-42d5-452d-bbd5-0ab903d98cd9" />
-|
-| 📝 Registro | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/77927aa1-e84e-4f2c-9640-2206493aa09e" />
- |
-| 🎌 Home | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/293dbb30-7ab7-41c6-850f-a088baf58489" />
- |
-| 🎌 Catálogo de Animes | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/c6e2549c-cf44-4b6c-b869-2674c28c600e" />
- |
-| 🔍 Búsqueda de Anime | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/496ea104-c376-49b8-83f3-511003c0f53f" />
- |
-| 📄 Detalle de Anime | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/03dd56a4-6c5e-4d09-ba11-e3abcb6fe3ac" />
- |
- | 📷 Cámara |<img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/43e0b683-d86e-49da-a880-9ed60ad4924d" />
-
- |
-| 📷 Cámara y Galería |<img width="424" height="879" alt="image" src="https://github.com/user-attachments/assets/2b251943-3f1c-404d-8e40-87ae2111508c" />
- |
- 
-| 👤 Perfil | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/d3a9fffb-39fe-4763-ba36-cfdfd1d3bd4f" />
- |
-| 🚀 Splash Screen | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/f129ffc8-6912-420c-abaa-2a56f89df223" />
-|
+| 🔐 Login | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/56d2c726-42d5-452d-bbd5-0ab903d98cd9" />|
+| 📝 Registro | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/77927aa1-e84e-4f2c-9640-2206493aa09e" />|
+| 🎌 Home | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/293dbb30-7ab7-41c6-850f-a088baf58489" />|
+| 🎌 Catálogo de Animes | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/c6e2549c-cf44-4b6c-b869-2674c28c600e" />|
+| 🔍 Búsqueda de Anime | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/496ea104-c376-49b8-83f3-511003c0f53f" />|
+| 📄 Detalle de Anime | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/03dd56a4-6c5e-4d09-ba11-e3abcb6fe3ac" />|
+ | 📷 Cámara |<img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/43e0b683-d86e-49da-a880-9ed60ad4924d" />|
+| 📷 Cámara y Galería |<img width="424" height="879" alt="image" src="https://github.com/user-attachments/assets/2b251943-3f1c-404d-8e40-87ae2111508c" />|
+| 👤 Perfil | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/d3a9fffb-39fe-4763-ba36-cfdfd1d3bd4f" />|
+| 🚀 Splash Screen | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/f129ffc8-6912-420c-abaa-2a56f89df223" />|
 | 📱 Ícono de la Aplicación | <img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/779ed849-28a8-4492-8391-045f73545dfd" />
-<img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/82c3d036-3f10-44a3-824b-121646ad23b6" />
- |
+<img width="698" height="1600" alt="image" src="https://github.com/user-attachments/assets/82c3d036-3f10-44a3-824b-121646ad23b6" />|
 
 ---
 
